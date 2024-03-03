@@ -36,16 +36,11 @@ class PlayFileHandler(AbstractRequestHandler):
         # Toggle for using dynamic game state fetching
         use_dynamic_game_state = True  # Set to True to fetch game state dynamically, THIS DOES NOT WORK ANY MORE; MUST BE TRUE FOR CARD INFO (EndOfFunction)
 
-        default_sound_file_url = 'https://jlangisch.de/alexa_ada-computerfactory.mp3'
-        additional_sound_files = [
-            'https://jlangisch.de/alexa_ada-computerfactory.mp3',
-            'https://jlangisch.de/alexa_ada-computerfactory.mp3',
-            'https://jlangisch.de/alexa_ada-computerfactory.mp3'
-        ]
+        default_sound_file_url = 'https://jlangisch.de/satisfactory/sounds/ada_error_user.mp3'
 
         if use_dynamic_game_state:
             # Example URL - replace with your actual URL that returns the game state
-            state_url = 'https://jlangisch.de/satisfactory_state.json'
+            state_url = 'https://jlangisch.de/satisfactory/satisfactory_state.json'
 
             try:
                 with urllib.request.urlopen(state_url) as response:
@@ -55,10 +50,10 @@ class PlayFileHandler(AbstractRequestHandler):
 
                 # Select sound file based on game state
                 if game_state == 'Computer':
-                    sound_file_url = 'https://jlangisch.de/alexa_ada-computerfactory.mp3'
-                    logger.info("threw correct")
-                elif game_state == 'state2':
-                    sound_file_url = 'https://example.com/sound2.mp3'
+                    sound_file_url = 'https://jlangisch.de/satisfactory/sounds/ada_computerfactory.mp3'
+                elif game_state == 'VFramework':
+                    sound_file_url = 'https://jlangisch.de/satisfactory/sounds/ada_versatile_framework.mp3'
+                    logger.info("threw correct (man i hate cloudWatch)")
                 else:
                     sound_file_url = default_sound_file_url
             except Exception as e:
@@ -67,15 +62,17 @@ class PlayFileHandler(AbstractRequestHandler):
         else:
             sound_file_url = default_sound_file_url  # Use default sound if dynamic fetching is disabled
 
-        # Select a random sound file to play after the first one
-        random_sound_file_url = random.choice(additional_sound_files)
-
-        # Combine the two sound files in SSML
-        speech = f"<audio src='{sound_file_url}'/><break time='2s'/><audio src='{random_sound_file_url}'/>"
-
-        # Use the human_readable_issue for the SimpleCard content
-        handler_input.response_builder.speak(speech).set_card(
-            SimpleCard(title="Satisfactory News", content=human_readable_issue))
+        # SSML stuff
+        speech = f"<audio src='{sound_file_url}'/>"
+        try:
+            # Use the human_readable_issue for the SimpleCard content
+            handler_input.response_builder.speak(speech).set_card(
+                SimpleCard(title="Satisfactory News", content=human_readable_issue))
+        except Exception as e:
+            logger.error(f"Error fetching Human readable state for echo show devices: {e}")
+            handler_input.response_builder.speak(speech).set_card(
+                SimpleCard(title="Satisfactory News", content="none"))
+        
         return handler_input.response_builder.response
 
 class HelpIntentHandler(AbstractRequestHandler):
