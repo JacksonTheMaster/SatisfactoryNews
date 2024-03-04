@@ -40,7 +40,7 @@ class PlayFileHandler(AbstractRequestHandler):
 
         if use_dynamic_game_state:
             # Example URL - replace with your actual URL that returns the game state
-            state_url = 'https://jlangisch.de/satisfactory/satisfactory_state.json'
+            state_url = 'https://ha.jlangisch.de/local/satisfactory_alert_state.json'
 
             try:
                 with urllib.request.urlopen(state_url) as response:

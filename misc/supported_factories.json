@@ -1,0 +1,130 @@
+{
+    "Items": [
+        {
+            "Name": "ErrorHandler",
+            "Supported": "yes",
+            "HeavyFrame": "yes",
+            "FilenameForAlert": "https://jlangisch.de/satisfactory/sounds/ada_error_user.mp3"
+        },
+        {
+            "Name": "VersatileFramework",
+            "Supported": "yes",
+            "HeavyFrame": "yes",
+            "FilenameForAlert": "https://jlangisch.de/satisfactory/sounds/ada_versatile_framework.mp3"
+        },
+        {
+            "Name": "ComputerFactory",
+            "Supported": "yes",
+            "HeavyFrame": "yes",
+            "FilenameForAlert": "https://jlangisch.de/satisfactory/sounds/ada_computerfactory.mp3"
+        },
+        {
+            "Name": "HeavyModularFrameFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "MotorFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "ModularFrameFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "SteelBeamFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "SteelPipeFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "ReinforcedIronPlateFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "RotorFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "OscillatorFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "CableFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "ConcreteFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "CopperSheetFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "PlasticFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "RubberFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "CircuitBoardFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "AluminumSheetFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "BatteryFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "SupercomputerFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        },
+        {
+            "Name": "TurboMotorFactory",
+            "Supported": "no",
+            "HeavyFrame": "no",
+            "FilenameForAlert": ""
+        }
+    ]
+}

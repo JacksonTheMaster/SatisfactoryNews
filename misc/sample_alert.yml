@@ -1,0 +1,19 @@
+alias: Computer Factory Alert
+trigger:
+  - platform: webhook
+    webhook_id: satisfactory_webhook_identifier
+    allowed_methods:
+      - GET
+    local_only: true
+action:
+  - service: shell_command.update_alert_json
+    data:
+      subfactory: Computer
+      issueinfo: There is an issue with the Computer Factory.
+  - service: media_player.play_media
+    target:
+      entity_id: media_player.buro_show
+    data:
+      media_content_id: amzn1.ask.skill.9cd2a402-4860-4aca-a30d-43d7df5ee351
+      media_content_type: skill
+mode: single
