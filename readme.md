@@ -1,5 +1,5 @@
 # Satisfactory Factory Alert System for Alexa and Home Assistant
-This project enables real-time notifications via Alexa about the status of your Satisfactory game factory. By utilizing custom circuitry within the game, Home Assistant for local automation and control, and an Alexa Skill for voice notifications, you can get informed when your factory's status changes to "bad". The criteria for what constitutes a "bad" status is customizable, leveraging the creative potential of Satisfactory's in-game circuitry.
+This project enables real-time notifications via Alexa about the status of your Satisfactory game factory. By utilizing custom mod circuitry within the game, Home Assistant for local automation and control, and an Alexa Skill for voice notifications, you can get informed when your factory's status changes to "bad". The criteria for what constitutes a "bad" status is customizable, leveraging the creative potential of Satisfactory's in-game circuitry.
 
 ## Status: Work in Progress (WIP) 🚧
 This project is currently under development. Future plans include releasing a fully-fledged Alexa Skill and a Home Assistant Integration for easier setup and use.
