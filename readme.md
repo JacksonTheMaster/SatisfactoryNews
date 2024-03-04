@@ -1,3 +1,8 @@
+# This lets you utilize Home Assistant, Alexa, and the Satisfactory Mod Circutry to get Custom (ok premade by me but still) A.D.A Alexa Notifications about your factory
+You configure an image downloader to recieve a string with a webhook url whenever the factory status changes to "bad". How you measure that metric is up to you  and your creativity with circutry.
+
+
+
 Create Alexa Skill based on -> custom -> fact skill -> akexa hosted -> python and copy paste the lambda_function.py. (for now enough documentation)
 maybe change  invocation stuff (Jackie check if you changed stuff here or in alpha-1)
 
