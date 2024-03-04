@@ -27,7 +27,7 @@
         {
             "game_state": "HeavyModularFrameFactory",
             "Supported": "yes",
-            "empty_slot": "no",
+            "empty_slot": "yes",
             "audio_URI": "https://jlangisch.de/satisfactory/sounds/ada_computerfactory.mp3"
         },
         {
