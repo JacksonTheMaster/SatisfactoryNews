@@ -1,17 +1,47 @@
-Create Alexa Skill based on -> custom -> fact skill -> akexa hosted -> python and copy paste the lambda_function.py. (for now enough documentation)
-maybe change  invocation stuff (Jackie check if you changed stuff here or in alpha-1)
+# Satisfactory Factory Alert System for Alexa and Home Assistant
+This project enables real-time notifications via Alexa about the status of your Satisfactory game factory. By utilizing custom circuitry within the game, Home Assistant for local automation and control, and an Alexa Skill for voice notifications, you can get informed when your factory's status changes to "bad". The criteria for what constitutes a "bad" status is customizable, leveraging the creative potential of Satisfactory's in-game circuitry.
+
+## Status: Work in Progress (WIP) 🚧
+This project is currently under development. Future plans include releasing a fully-fledged Alexa Skill and a Home Assistant Integration for easier setup and use.
+
+All content and code provided here are open for use, including for commercial purposes.
+
+### Getting Started
+#### Create an Alexa Skill for Custom Notifications
+Navigate to the Alexa Developer Console and create a new skill:
+
+Choose the Custom model and select the Fact Skill template.
+Opt for Alexa-Hosted (Python) as your backend resource.
+Name your skill appropriately.
+#### Implement your skill logic:
+
+Copy and paste the provided lambda_function.py code into the Alexa skill's code editor.
+Adjust the invocation name and any specific intents or slots as necessary. (Note: If you've made changes to the invocation or interaction model, ensure they are consistent)
+#### Integrate with Home Assistant
+
+Configure Image Downloader in Circutry:
+
+Set up an image downloader within Satisfactory / Circutry to trigger on receiving a specific string containing a webhook URL. This URL is called whenever your factory's status changes to "bad". The GET request is sent whenever the string changes.
+#### Create the Home Assistant Script:
+
+Add the script to Home Assistant to facilitate the above mechanism. This script is responsible for capturing the factory status and updating the webhook.
+#### Set Up Automations:
+
+Refer to the provided /misc/sample_alert.yml for an example automation configuration. This automation is crucial for triggering the script based on game events and updating the factory status.
+Every Item currenly supported is found in /misc/supported_factories.json.
+
+Its cruical to stick to these names so the skill can use it as a reference to play the right audio file for the item type.
+
+#### Expose Factory Status JSON:
+
+Ensure the automation updates and exposes a JSON file at https://<your_url>/local/satisfactory_alert_state.json. This file contains the current factory status and is accessible over the web.
 
 
-create script somewhere in home assistant 
+## Documentation will be expanded to include detailed instructions!!!
 
-img 1-3 
-
-create automation like  /misc/sample_alert.yml
-
-call GET endpoint and the json is saved and exposed to https://url/local/satisfactory_alert_state.json
-
-alexa skill can then get the json and determine wich sound to play.
-
+Additional features and automation examples will be added based on community feedback and further development.
+Contribution and Feedback
+This project is open for contributions and feedback. Whether you have suggestions for improvements, new features, or have encountered issues, your input is valuable for making this project more robust and user-friendly.
 
 ## Create ADA Voice Sounds
 (https://satisfactory.guru/articles/read/index/id/47/name/ADA+Voice, 04032024)
