@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-"""Play Audio File on Skill Launch based on Simple fact sample app."""
 
 import urllib.request
 import json
@@ -18,6 +17,10 @@ from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model.ui import SimpleCard
 from ask_sdk_model import Response
 
+
+state_url = 'https://ha.jlangisch.de/local/satisfactory_alert_state.json'
+#this is where the Skill gathers the current issue state of your factory.
+
 sb = SkillBuilder()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -33,15 +36,56 @@ class PlayFileHandler(AbstractRequestHandler):
         # type: (HandlerInput) -> Response
         logger.info("In PlayFileHandler")
 
+        game_states_url = 'https://raw.githubusercontent.com/JacksonTheMaster/SatisfactoryNews/main/misc/supported_factories.json'
+        default_sound_file_url = 'https://jlangisch.de/satisfactory/sounds/ada_error_user.mp3'
+
+        try:
+            # Fetch and load the game states JSON data
+            with urllib.request.urlopen(game_states_url) as url:
+                game_states_data = json.loads(url.read().decode())
+        except Exception as e:
+            logger.error(f"Error fetching game states JSON: {e}")
+            sound_file_url = default_sound_file_url  # Use default sound if error occurs
+        else:
+            # Fetch the game state from your state URL
+            state_url = 'https://ha.jlangisch.de/local/satisfactory_alert_state.json'  # Your game state URL
+            try:
+                with urllib.request.urlopen(state_url) as response:
+                    state_data = json.loads(response.read().decode())
+                    game_state = state_data['subfactory']
+            except Exception as e:
+                logger.error(f"Error fetching game state: {e}")
+                sound_file_url = default_sound_file_url
+            else:
+                # Find the matching game state in the JSON data
+                sound_file_url = default_sound_file_url  # Default to this if no match found
+                for item in game_states_data['Items']:
+                    if item['game_state'] == game_state and item.get('Supported', 'no') == 'yes':
+                        sound_file_url = item.get('audio_URI', default_sound_file_url)
+                        break
+
+        # SSML stuff
+        speech = f"<audio src='{sound_file_url}'/>"
+        handler_input.response_builder.speak(speech).set_card(
+            SimpleCard(title="Satisfactory News", content="Game state audio"))
+        
+        return handler_input.response_builder.response
+    """Handler for Skill Launch."""
+
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return is_request_type("LaunchRequest")(handler_input)
+                
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        logger.info("In PlayFileHandler")
+
         # Toggle for using dynamic game state fetching
-        use_dynamic_game_state = True  # Set to True to fetch game state dynamically, THIS DOES NOT WORK ANY MORE; MUST BE TRUE FOR CARD INFO (EndOfFunction)
+        use_dynamic_game_state = True  # Set to True to fetch game state dynamically, THIS DOES NOT WORK ANY MORE; MUST BE TRUE (need to test maybe works again now because im handling the cards different)
 
         default_sound_file_url = 'https://jlangisch.de/satisfactory/sounds/ada_error_user.mp3'
 
         if use_dynamic_game_state:
-            # Example URL - replace with your actual URL that returns the game state
-            state_url = 'https://ha.jlangisch.de/local/satisfactory_alert_state.json'
-
             try:
                 with urllib.request.urlopen(state_url) as response:
                     state_data = json.loads(response.read().decode())

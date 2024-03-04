@@ -1,135 +1,135 @@
 {
     "Items": [
         {
-            "Name": "ErrorHandler",
+            "game_state": "usererror",
             "Supported": "yes",
-            "HeavyFrame": "yes",
+            "empty_slot": "no",
             "FilenameForAlert": "https://jlangisch.de/satisfactory/sounds/ada_error_user.mp3"
         },
         {
-            "Name": "SetupError",
+            "game_state": "setuperror",
             "Supported": "WIP, SOUND NOT INCLUDED YET",
-            "HeavyFrame": "yes",
+            "empty_slot": "no",
             "FilenameForAlert": "https://jlangisch.de/satisfactory/sounds/ada_setup_error.mp3"
         },
         {
-            "Name": "VersatileFramework",
+            "game_state": "VFramework",
             "Supported": "yes",
-            "HeavyFrame": "yes",
+            "empty_slot": "yes",
             "FilenameForAlert": "https://jlangisch.de/satisfactory/sounds/ada_versatile_framework.mp3"
         },
         {
-            "Name": "ComputerFactory",
+            "game_state": "Computer",
             "Supported": "yes",
-            "HeavyFrame": "yes",
+            "empty_slot": "yes",
             "FilenameForAlert": "https://jlangisch.de/satisfactory/sounds/ada_computerfactory.mp3"
         },
         {
-            "Name": "HeavyModularFrameFactory",
+            "game_state": "HeavyModularFrameFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "MotorFactory",
+            "game_state": "MotorFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "ModularFrameFactory",
+            "game_state": "ModularFrameFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "SteelBeamFactory",
+            "game_state": "SteelBeamFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "SteelPipeFactory",
+            "game_state": "SteelPipeFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "ReinforcedIronPlateFactory",
+            "game_state": "ReinforcedIronPlateFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "RotorFactory",
+            "game_state": "RotorFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "OscillatorFactory",
+            "game_state": "OscillatorFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "CableFactory",
+            "game_state": "CableFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "ConcreteFactory",
+            "game_state": "ConcreteFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "CopperSheetFactory",
+            "game_state": "CopperSheetFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "PlasticFactory",
+            "game_state": "PlasticFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "RubberFactory",
+            "game_state": "RubberFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "CircuitBoardFactory",
+            "game_state": "CircuitBoardFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "AluminumSheetFactory",
+            "game_state": "AluminumSheetFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "BatteryFactory",
+            "game_state": "BatteryFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "SupercomputerFactory",
+            "game_state": "SupercomputerFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         },
         {
-            "Name": "TurboMotorFactory",
+            "game_state": "TurboMotorFactory",
             "Supported": "no",
-            "HeavyFrame": "no",
+            "empty_slot": "no",
             "FilenameForAlert": ""
         }
     ]
