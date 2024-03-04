@@ -49,11 +49,12 @@ class PlayFileHandler(AbstractRequestHandler):
                     human_readable_issue = state_data['issueinfo'] 
 
                 # Select sound file based on game state
-                if game_state == 'Computer':
+                if game_state == 'usererror':
+                    sound_file_url = 'https://jlangisch.de/satisfactory/sounds/ada_setup_error.mp3' # TODO
+                elif game_state == 'Computer':
                     sound_file_url = 'https://jlangisch.de/satisfactory/sounds/ada_computerfactory.mp3'
                 elif game_state == 'VFramework':
                     sound_file_url = 'https://jlangisch.de/satisfactory/sounds/ada_versatile_framework.mp3'
-                    logger.info("threw correct (man i hate cloudWatch)")
                 else:
                     sound_file_url = default_sound_file_url
             except Exception as e:

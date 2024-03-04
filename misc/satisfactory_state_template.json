@@ -1,0 +1,1 @@
+{"issueinfo": "a text, can be anything really. will be displayed on echo show devices. not required. ","subfactory": "one of the supported factory types. mandatory, user error if not sent."}

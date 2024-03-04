@@ -7,6 +7,12 @@
             "FilenameForAlert": "https://jlangisch.de/satisfactory/sounds/ada_error_user.mp3"
         },
         {
+            "Name": "SetupError",
+            "Supported": "WIP, SOUND NOT INCLUDED YET",
+            "HeavyFrame": "yes",
+            "FilenameForAlert": "https://jlangisch.de/satisfactory/sounds/ada_setup_error.mp3"
+        },
+        {
             "Name": "VersatileFramework",
             "Supported": "yes",
             "HeavyFrame": "yes",
